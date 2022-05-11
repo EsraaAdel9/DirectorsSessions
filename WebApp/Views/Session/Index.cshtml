@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebApp.Models.NewSession>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<a href="@Url.Action("Create")" class="btn btn-primary "><i class="fa fa-plus pull-right" style="padding-top: 5px;"></i>انشاء جلسة جديدة&nbsp;</a>
+<br />
+<br />
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Session_Num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Session_Date)
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Session_Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Session_Date)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-primary">
+                    <i class="icofont-ui-edit"></i>
+                    تعديل
+                </a>
+                <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-danger">
+                    <i class="icofont-ui-delete"></i>
+                    حذف
+                </a>
+
+                @*<a href="@Url.Action("ViewSub", new { id = item.ID })" class="btn btn-success">
+                    <i class="icofont-ui-delete"></i>
+                    ادخال مذكرات الجلسة
+                </a>*@
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,55 @@
+﻿@model WebApp.Models.SessionSubjects
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h3>هل تريد حذف هذه المذكرات بالفعل؟</h3>
+<div>
+    <h4>SessionSubjects</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NewSession.Session_Num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewSession.Session_Num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sub_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sub_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sub_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sub_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sub_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sub_Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
