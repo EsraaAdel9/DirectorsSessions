@@ -22,17 +22,6 @@ namespace WebApp.Controllers
             return View(sessionSubjects.ToList());
         }
 
-        public ActionResult CustIndex(int? id)
-        {
-            var sessionSubjects = db.SessionSubjects.Where(m => m.NewSessionID == 2).ToList();
-            if (sessionSubjects==null)
-            {
-                return HttpNotFound();
-            }
-            else
-                return View(sessionSubjects.ToList());
-        }
-
         // GET: Subjects/Details/5
         public ActionResult Details(int? id)
         {

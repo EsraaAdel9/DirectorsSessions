@@ -21,7 +21,7 @@ namespace WebApp.Controllers
             return View(db.NewSessions.ToList());
         }
 
-
+       
         // GET: Session/Details/5
         public ActionResult Details(int? id)
         {
@@ -115,6 +115,16 @@ namespace WebApp.Controllers
             db.NewSessions.Remove(newSession);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult View1(int? id)
+        {
+            var sessionSubjects = db.SessionSubjects.Include(s => s.NewSession).Where(m => m.NewSessionID == 2).ToList();
+            if (sessionSubjects.Count <1)
+            {
+                return HttpNotFound();
+            }
+            else
+                return View(sessionSubjects);
         }
 
         protected override void Dispose(bool disposing)
