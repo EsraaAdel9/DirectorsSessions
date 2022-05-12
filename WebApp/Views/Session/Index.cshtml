@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<a href="@Url.Action("Create")" class="btn btn-primary "><i class="fa fa-plus pull-right" style="padding-top: 5px;"></i>انشاء جلسة جديدة&nbsp;</a>
+<a href="@Url.Action("Create")" class="btn btn-primary "><i class="fa fa-plus" style="padding-top: 5px; padding-left: 5px;"></i>انشاء جلسة جديدة&nbsp;</a>
 <br />
 <br />
 
@@ -44,9 +44,6 @@
                     <i class="icofont-ui-delete"></i>
                     ادخال مذكرات الجلسة
                 </a>
-                @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-        @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-        @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
             </td>
         </tr>
     }

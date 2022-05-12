@@ -36,12 +36,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-3">
-                <input type="submit" value="حفظ" class="btn btn-primary" />
+                <input type="submit" value="حفظ الجلسة" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Index")" class="btn btn-previous pull-right"><i class="fa fa-backward pull-right" style="padding-top: 1px; padding-right: 5px;"></i>العودة لقائمة الجلسات</a>
 </div>

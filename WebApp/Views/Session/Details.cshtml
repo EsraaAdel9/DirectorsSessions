@@ -30,6 +30,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Edit",new { id = Model.ID })" class="btn btn-primary pull-left"><i class="fa fa-edit " style="padding-top: 5px; padding-left: 5px;"></i>تعديل الموضوع</a>
+    <a href="@Url.Action("Index")" class="btn btn-previous pull-right"><i class="fa fa-backward pull-right" style="padding-top: 1px; padding-right: 5px;"></i>العودة لقائمة الموضوعات</a>
 </p>

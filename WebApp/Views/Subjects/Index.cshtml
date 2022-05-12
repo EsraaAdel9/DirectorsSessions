@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<h4>مذكرات الجلسة رقم</h4>
+<h4>مواضيع الجلسة رقم</h4>
 
-<a href="@Url.Action("Create")" class="btn btn-primary "><i class="fa fa-plus pull-right" style="padding-top: 5px;"></i>انشاء مذكرة جديدة&nbsp;</a>
+<a href="@Url.Action("Create")" class="btn btn-primary "><i class="fa fa-plus" style="padding-top: 5px; padding-left: 5px;"></i>انشاء موضوع جديد&nbsp;</a>
 <br />
 <br />
 
@@ -56,9 +56,6 @@
                     <i class="icofont-ui-delete"></i>
                     حذف
                 </a>
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
             </td>
         </tr>
     }

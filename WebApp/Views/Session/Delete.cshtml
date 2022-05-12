@@ -27,12 +27,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="حدف" class="btn btn-danger" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="حذف الموضوع" class="btn btn-danger" />
+            <a href="@Url.Action("Index")" class="btn btn-previous pull-right"><i class="fa fa-backward pull-right" style="padding-top: 1px; padding-right: 5px;"></i>العودة لقائمة الجلسات</a>
         </div>
     }
 </div>
