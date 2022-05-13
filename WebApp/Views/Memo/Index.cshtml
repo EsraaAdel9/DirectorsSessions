@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApp.Models.MemoTypes>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+    @foreach (var item in Model)
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading"><h2>@Html.DisplayFor(modelItem => item.Name)</h2></div>
+
+            <div class="row panel-body">
+                @*<h5>@Html.DisplayFor(modelItem => item.CategoryDescription)</h5>*@
+
+                @foreach (var subItem in item.sub)
+                {
+                    //if (subItem.NewSessionID == Model.NewSessionID)
+                    //{
+                        <div class="col-md-3 thumbnail" style="margin-left:20px; margin-bottom:30px; min-height:100px;">
+                            @*<img src="~/Uploads/@subItem.JobImage" />*@
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.LabelFor(modelItem => subItem.Sub_ID).ToString()))</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subItem.Sub_ID).ToString()))</h5>
+                                </div>
+                            </div>
+                            <div class="row" style="text-align:center">
+                                <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subItem.Sub_Description).ToString()))</h5>
+                            </div>
+                            <div class="row" style="text-align:center">
+                                @Html.ActionLink("عرض الموضوع", "Details", new { JobId = subItem.NewSessionID }, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    //}
+                }
+            </div>
+        </div>
+    }
+
+

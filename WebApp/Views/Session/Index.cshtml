@@ -5,44 +5,44 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<a href="@Url.Action("Create")" class="btn btn-primary "><i class="fa fa-plus" style="padding-top: 5px; padding-left: 5px;"></i>انشاء جلسة جديدة&nbsp;</a>
+<a href="@Url.Action("Create")" class="btn btn-info "><i class="fa fa-plus" style="padding-top: 5px; padding-left: 5px;"></i>انشاء جلسة جديدة&nbsp;</a>
 <br />
 <br />
 
 
 <table class="table">
     <tr>
-        <th>
+        <th style="min-width: 90px; text-align: center;">
             @Html.DisplayNameFor(model => model.Session_Num)
         </th>
-        <th>
+        <th style="min-width: 220px; text-align: center;">
             @Html.DisplayNameFor(model => model.Session_Date)
         </th>
-        <th>Action</th>
+        <th style="text-align:center">Action</th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td style="min-width: 90px; text-align: center;">
                 @Html.DisplayFor(modelItem => item.Session_Num)
             </td>
-            <td>
+            <td style="min-width: 220px; text-align: center;">
                 @Html.DisplayFor(modelItem => item.Session_Date)
-            </td>
-            <td>
-                <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-primary">
-                    <i class="icofont-ui-edit"></i>
+            </td">
+            <td style="text-align:center">
+                <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-info">
                     تعديل
                 </a>
                 <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-danger">
-                    <i class="icofont-ui-delete"></i>
                     حذف
                 </a>
 
-                <a href="@Url.Action("View1", new { id = item.ID })" class="btn btn-success">
-                    <i class="icofont-ui-delete"></i>
+                <a href="@Url.Action("Index","Subjects", new { id = item.ID })" class="btn btn-success">
                     ادخال مذكرات الجلسة
+                </a>
+                <a href="@Url.Action("Index","Memo", new { id = item.ID })" class="btn btn-default">
+                    عرض مذكرات الجلسة
                 </a>
             </td>
         </tr>

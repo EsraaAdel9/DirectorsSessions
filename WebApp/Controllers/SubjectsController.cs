@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApp.Models;
+using WebApp.ViewModel;
 using WebApplication1.Models;
 
 namespace WebApp.Controllers
@@ -16,9 +17,22 @@ namespace WebApp.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Subjects
-        public ActionResult Index()
+
+        //public ActionResult Index()
+        //{
+        //    var sessionSubjects = db.SessionSubjects.Include(s => s.NewSession);
+        //    return View(sessionSubjects.ToList());
+        //}
+
+        public ActionResult Index(int? id)
         {
             var sessionSubjects = db.SessionSubjects.Include(s => s.NewSession);
+
+            if (id != null)
+            {
+                sessionSubjects = db.SessionSubjects.Include(s => s.NewSession).Where(m => m.NewSessionID == id);
+                return View(sessionSubjects.ToList());
+            }
             return View(sessionSubjects.ToList());
         }
 
@@ -40,8 +54,12 @@ namespace WebApp.Controllers
         // GET: Subjects/Create
         public ActionResult Create()
         {
-            ViewBag.NewSessionID = new SelectList(db.NewSessions, "ID", "Session_Num");
-            return View();
+            ViewBag.NewSessionID = new SelectList(db.NewSessions, "ID", "Session_Num", "اختر");
+            var viewmodel = new SubjectViewMode
+            {
+                MemoTypes = db.MemoTypes.ToList()
+            };        
+            return View(viewmodel);
         }
 
         // POST: Subjects/Create
@@ -49,17 +67,31 @@ namespace WebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Sub_ID,Sub_Name,Sub_Description,NewSessionID")] SessionSubjects sessionSubjects)
+        public ActionResult Create([Bind(Include = "ID,Sub_ID,Sub_Name,Sub_Description,NewSessionID,MemoTypesID")] SubjectViewMode model)
         {
             if (ModelState.IsValid)
             {
-                db.SessionSubjects.Add(sessionSubjects);
+                var Sub = new SessionSubjects()
+                {
+                    Sub_ID = model.Sub_ID,
+                    Sub_Name = model.Sub_Name,
+                    Sub_Description = model.Sub_Description,
+                    NewSessionID = model.NewSessionID,
+                    MemoTypesID = model.MemoTypesID
+                };
+
+                db.SessionSubjects.Add(Sub);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.NewSessionID = new SelectList(db.NewSessions, "ID", "Session_Num", sessionSubjects.NewSessionID);
-            return View(sessionSubjects);
+            ViewBag.NewSessionID = new SelectList(db.NewSessions, "ID", "Session_Num");
+            var viewmodel = new SubjectViewMode
+            {
+                MemoTypes = db.MemoTypes.ToList()
+            }; 
+            
+            return View(viewmodel);
         }
 
         // GET: Subjects/Edit/5

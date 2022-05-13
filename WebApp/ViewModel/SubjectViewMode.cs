@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using WebApp.Models;
 
-namespace WebApp.Models
+namespace WebApp.ViewModel
 {
-    public class SessionSubjects
+    public class SubjectViewMode
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -19,7 +20,7 @@ namespace WebApp.Models
 
         [Display(Name = "نوع المذكرة")]
         public int MemoTypesID { get; set; }
-        public virtual MemoTypes MemoTypes { get; set; }
+        public IEnumerable<MemoTypes> MemoTypes { get; set; }
 
         [Required]
         [Display(Name = "رقم الموضوع")]
@@ -35,6 +36,5 @@ namespace WebApp.Models
         [Display(Name = "الموضوع")]
         public string Sub_Description { get; set; }
 
-        
     }
 }

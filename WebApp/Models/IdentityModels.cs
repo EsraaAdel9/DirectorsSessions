@@ -33,5 +33,7 @@ namespace WebApplication1.Models
         public System.Data.Entity.DbSet<WebApp.Models.NewSession> NewSessions { get; set; }
 
         public System.Data.Entity.DbSet<WebApp.Models.SessionSubjects> SessionSubjects { get; set; }
+
+        public System.Data.Entity.DbSet<WebApp.Models.MemoTypes> MemoTypes { get; set; }
     }
 }
