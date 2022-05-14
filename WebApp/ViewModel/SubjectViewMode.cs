@@ -32,9 +32,8 @@ namespace WebApp.ViewModel
         public string Sub_Name { get; set; }
 
         [Required]
-        [MaxLength(2000)]
-        [Display(Name = "الموضوع")]
-        public string Sub_Description { get; set; }
+        [Display(Name = "ملف الموضوع")]
+        public string Sub_File { get; set; }
 
     }
 }

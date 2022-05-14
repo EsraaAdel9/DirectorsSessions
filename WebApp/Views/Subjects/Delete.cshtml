@@ -16,7 +16,13 @@
         <dd>
             @Html.DisplayFor(model => model.NewSession.Session_Num)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoTypes.Name)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.MemoTypes.Name)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Sub_ID)
         </dt>
@@ -34,11 +40,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Sub_Description)
+            @Html.DisplayNameFor(model => model.Sub_File)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Sub_Description)
+            @Html.DisplayFor(model => model.Sub_File)
         </dd>
 
     </dl>
@@ -47,7 +53,7 @@
         @Html.AntiForgeryToken()
 
 <div class="form-actions no-color">
-    <input type="submit" value="حذف الجلسة" class="btn btn-danger" /> 
+    <input type="submit" value="حذف الموضوع" class="btn btn-danger" /> 
     <a href="@Url.Action("Index")" class="btn btn-previous pull-right"><i class="fa fa-backward pull-right" style="padding-top: 1px; padding-right: 5px;"></i>العودة لقائمة الموضوعات</a>
 </div>
     }

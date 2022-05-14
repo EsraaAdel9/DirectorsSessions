@@ -168,6 +168,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MemoController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
@@ -203,6 +204,14 @@
     <Compile Include="Migrations\202205131753335_upd.cs" />
     <Compile Include="Migrations\202205131753335_upd.Designer.cs">
       <DependentUpon>202205131753335_upd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205140817381_subfile.cs" />
+    <Compile Include="Migrations\202205140817381_subfile.Designer.cs">
+      <DependentUpon>202205140817381_subfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205141004169_sub.cs" />
+    <Compile Include="Migrations\202205141004169_sub.Designer.cs">
+      <DependentUpon>202205141004169_sub.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -288,6 +297,8 @@
     <Content Include="Views\Subjects\Edit.cshtml" />
     <Content Include="Views\Subjects\Index.cshtml" />
     <Content Include="Views\Memo\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -297,6 +308,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205111649074_InitialCreate.resx">
@@ -319,6 +331,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205131753335_upd.resx">
       <DependentUpon>202205131753335_upd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205140817381_subfile.resx">
+      <DependentUpon>202205140817381_subfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205141004169_sub.resx">
+      <DependentUpon>202205141004169_sub.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -26,7 +26,7 @@
             @Html.DisplayNameFor(model => model.Sub_Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sub_Description)
+            @Html.DisplayNameFor(model => model.Sub_File)
         </th>
         <th></th>
     </tr>
@@ -47,7 +47,7 @@
         @Html.DisplayFor(modelItem => item.Sub_Name)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Sub_Description)
+        @Html.DisplayFor(modelItem => item.Sub_File)
     </td>
     <td>
         <a href="@Url.Action("Details", new { id = item.ID })" class="btn btn-default">

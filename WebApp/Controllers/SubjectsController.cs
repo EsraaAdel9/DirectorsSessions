@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -67,15 +68,19 @@ namespace WebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Sub_ID,Sub_Name,Sub_Description,NewSessionID,MemoTypesID")] SubjectViewMode model)
+        public ActionResult Create( SubjectViewMode model, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+                string path = Path.Combine(Server.MapPath("~/Uploads"), upload.FileName);
+                upload.SaveAs(path);
+                model.Sub_File = upload.FileName;
+
                 var Sub = new SessionSubjects()
                 {
                     Sub_ID = model.Sub_ID,
                     Sub_Name = model.Sub_Name,
-                    Sub_Description = model.Sub_Description,
+                    Sub_File = model.Sub_File,
                     NewSessionID = model.NewSessionID,
                     MemoTypesID = model.MemoTypesID
                 };
@@ -107,7 +112,16 @@ namespace WebApp.Controllers
                 return HttpNotFound();
             }
             ViewBag.NewSessionID = new SelectList(db.NewSessions, "ID", "Session_Num", sessionSubjects.NewSessionID);
-            return View(sessionSubjects);
+            var viewmodel = new SubjectViewMode
+            {
+                Sub_ID= sessionSubjects.Sub_ID,
+                Sub_Name = sessionSubjects.Sub_Name,
+                MemoTypesID = sessionSubjects.MemoTypesID,
+                NewSessionID = sessionSubjects.NewSessionID,
+                Sub_File = sessionSubjects.Sub_File,
+                MemoTypes = db.MemoTypes.ToList()
+            };
+            return View(viewmodel);
         }
 
         // POST: Subjects/Edit/5
@@ -115,16 +129,25 @@ namespace WebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Sub_ID,Sub_Name,Sub_Description,NewSessionID")] SessionSubjects sessionSubjects)
+        public ActionResult Edit([Bind(Include = "ID,Sub_ID,Sub_Name,Sub_File,NewSessionID,MemoTypesID")] SessionSubjects Sub)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sessionSubjects).State = EntityState.Modified;
+                db.Entry(Sub).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.NewSessionID = new SelectList(db.NewSessions, "ID", "Session_Num", sessionSubjects.NewSessionID);
-            return View(sessionSubjects);
+            ViewBag.NewSessionID = new SelectList(db.NewSessions, "ID", "Session_Num", Sub.NewSessionID);
+            var viewmodel = new SubjectViewMode
+            {
+                Sub_ID = Sub.Sub_ID,
+                Sub_Name = Sub.Sub_Name,
+                MemoTypesID = Sub.MemoTypesID,
+                NewSessionID = Sub.NewSessionID,
+                Sub_File = Sub.Sub_File,
+                MemoTypes = db.MemoTypes.ToList()
+            };
+            return View(viewmodel);
         }
 
         // GET: Subjects/Delete/5

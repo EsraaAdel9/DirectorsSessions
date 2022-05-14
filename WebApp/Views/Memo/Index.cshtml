@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="row" style="text-align:center">
-                                <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subItem.Sub_Description).ToString()))</h5>
+                                <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subItem.Sub_File).ToString()))</h5>
                             </div>
                             <div class="row" style="text-align:center">
                                 @Html.ActionLink("عرض الموضوع", "Details", new { JobId = subItem.NewSessionID }, new { @class = "btn btn-primary" })
