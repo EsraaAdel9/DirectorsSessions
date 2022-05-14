@@ -31,7 +31,6 @@ namespace WebApp.ViewModel
         [Display(Name = "اسم الموضوع")]
         public string Sub_Name { get; set; }
 
-        [Required]
         [Display(Name = "ملف الموضوع")]
         public string Sub_File { get; set; }
 

@@ -6,11 +6,11 @@
 
 <h4>انشاء موضوع جلسة</h4>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Subjects", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
+    <div class="form-horizontal">
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -49,14 +49,18 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Sub_File, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-6" style="padding-top:15px">
+            @*@Html.TextBox("upload", "", new { type = "file" })*@
+
             <input type="file" name="upload" />
-            @*@Html.ValidationMessageFor(model => model.Sub_File, "", new { @class = "text-danger" })*@
+            @Html.ValidationMessageFor(model => model.Sub_File, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group" style="text-align:center">
         <div class="col-md-offset-2 col-md-6">
-            <input type="submit" value="حفظ الموضوع" class="btn btn-success" />
+            <input type="submit" value="حفظ الموضوع" class="btn btn-success" />        
+            @*@ViewBag.Message*@
+
         </div>
     </div>
 </div>

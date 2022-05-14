@@ -68,13 +68,23 @@ namespace WebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( SubjectViewMode model, HttpPostedFileBase upload)
+        public ActionResult Create(SubjectViewMode model, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
-                string path = Path.Combine(Server.MapPath("~/Uploads"), upload.FileName);
+
+
+                //string filename = Path.GetFileName(upload.FileName);
+                //string filepath = Path.Combine(Server.MapPath("~/Uploads"), filename);
+                //upload.SaveAs(filepath);
+                
+                //ViewBag.Message = "Uploded";
+
+                string path = Path.Combine(Server.MapPath("~/FileUpload"), upload.FileName);
                 upload.SaveAs(path);
                 model.Sub_File = upload.FileName;
+
+                //model.Sub_File = path;
 
                 var Sub = new SessionSubjects()
                 {
