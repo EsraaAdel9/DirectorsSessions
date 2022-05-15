@@ -7,7 +7,7 @@
 
 <h4>تعديل الموضوع</h4>
 <br />
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Subjects", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <hr />

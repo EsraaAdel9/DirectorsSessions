@@ -139,10 +139,22 @@ namespace WebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Sub_ID,Sub_Name,Sub_File,NewSessionID,MemoTypesID")] SessionSubjects Sub)
+        public ActionResult Edit([Bind(Include = "ID,Sub_ID,Sub_Name,Sub_File,NewSessionID,MemoTypesID")] SessionSubjects Sub, HttpPostedFileBase upload)
         {
+            //string oldPath = Path.Combine(Server.MapPath("~/FileUpload"), Sub.Sub_File);
+
+            if (upload != null)
+            {
+                //System.IO.File.Delete(oldPath);
+                string path = Path.Combine(Server.MapPath("~/FileUpload"), upload.FileName);
+                upload.SaveAs(path);
+                Sub.Sub_File = upload.FileName;
+            }
+
             if (ModelState.IsValid)
             {
+                
+
                 db.Entry(Sub).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

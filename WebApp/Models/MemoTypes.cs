@@ -17,6 +17,8 @@ namespace WebApp.Models
         [Display(Name = "نوع المذكرة")]
         public string Name { get; set; }
 
+        public string Img { get; set; }
+
         public virtual ICollection<SessionSubjects> sub { get; set; }
     }
 }
