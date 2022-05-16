@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApp.ViewModel;
 using WebApplication1.Models;
 
 namespace WebApp.Controllers
@@ -12,11 +13,14 @@ namespace WebApp.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Memo
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             var list = db.MemoTypes.ToList();
+            ViewBag.Result = id.ToString();
+
             return View(list);
         }
+
 
         // GET: Memo/Details/5
         public ActionResult Details(int id)

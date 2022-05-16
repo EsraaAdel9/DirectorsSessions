@@ -24,7 +24,7 @@ namespace WebApp.ViewModel
 
         [Required]
         [Display(Name = "رقم الموضوع")]
-        public int Sub_ID { get; set; }
+        public string Sub_ID { get; set; }
 
         [Required]
         [MaxLength(250)]
