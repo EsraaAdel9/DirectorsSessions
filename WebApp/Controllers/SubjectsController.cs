@@ -73,19 +73,9 @@ namespace WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-
-
-                //string filename = Path.GetFileName(upload.FileName);
-                //string filepath = Path.Combine(Server.MapPath("~/Uploads"), filename);
-                //upload.SaveAs(filepath);
-                
-                //ViewBag.Message = "Uploded";
-
                 string path = Path.Combine(Server.MapPath("~/FileUpload"), upload.FileName);
                 upload.SaveAs(path);
                 model.Sub_File = upload.FileName;
-
-                //model.Sub_File = path;
 
                 var Sub = new SessionSubjects()
                 {

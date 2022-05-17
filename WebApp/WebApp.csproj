@@ -196,6 +196,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MemoController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Controllers\SessionReportsController.cs" />
+    <Compile Include="Controllers\SessionSchedulesController.cs" />
     <Compile Include="Controllers\SubjectsController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -253,12 +255,26 @@
     <Compile Include="Migrations\202205161952518_strsub2.Designer.cs">
       <DependentUpon>202205161952518_strsub2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205171826478_sessionreport.cs" />
+    <Compile Include="Migrations\202205171826478_sessionreport.Designer.cs">
+      <DependentUpon>202205171826478_sessionreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205171911058_sessionreport1.cs" />
+    <Compile Include="Migrations\202205171911058_sessionreport1.Designer.cs">
+      <DependentUpon>202205171911058_sessionreport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205171958339_sessionschadule.cs" />
+    <Compile Include="Migrations\202205171958339_sessionschadule.Designer.cs">
+      <DependentUpon>202205171958339_sessionschadule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MemoTypes.cs" />
     <Compile Include="Models\NewSession.cs" />
+    <Compile Include="Models\SessionReport.cs" />
+    <Compile Include="Models\SessionSchedule.cs" />
     <Compile Include="Models\SessionSubjects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -341,6 +357,16 @@
     <Content Include="Views\Memo\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\SessionReports\Create.cshtml" />
+    <Content Include="Views\SessionReports\Delete.cshtml" />
+    <Content Include="Views\SessionReports\Details.cshtml" />
+    <Content Include="Views\SessionReports\Edit.cshtml" />
+    <Content Include="Views\SessionReports\Index.cshtml" />
+    <Content Include="Views\SessionSchedules\Create.cshtml" />
+    <Content Include="Views\SessionSchedules\Delete.cshtml" />
+    <Content Include="Views\SessionSchedules\Details.cshtml" />
+    <Content Include="Views\SessionSchedules\Edit.cshtml" />
+    <Content Include="Views\SessionSchedules\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -391,6 +417,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205161952518_strsub2.resx">
       <DependentUpon>202205161952518_strsub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171826478_sessionreport.resx">
+      <DependentUpon>202205171826478_sessionreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171911058_sessionreport1.resx">
+      <DependentUpon>202205171911058_sessionreport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171958339_sessionschadule.resx">
+      <DependentUpon>202205171958339_sessionschadule.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

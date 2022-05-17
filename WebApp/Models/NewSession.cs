@@ -22,5 +22,6 @@ namespace WebApp.Models
         public DateTime Session_Date { get; set; }
 
         public virtual ICollection <SessionSubjects>sub { get; set; }
+        public virtual ICollection <SessionReport>report { get; set; }
     }
 }

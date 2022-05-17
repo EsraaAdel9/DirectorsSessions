@@ -49,8 +49,6 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Sub_File, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-6" style="padding-top:15px">
-            @*@Html.TextBox("upload", "", new { type = "file" })*@
-
             <input type="file" name="upload" />
             @Html.ValidationMessageFor(model => model.Sub_File, "", new { @class = "text-danger" })
         </div>
