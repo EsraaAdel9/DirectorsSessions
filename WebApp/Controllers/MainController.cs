@@ -3,14 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Models;
 
 namespace WebApp.Controllers
 {
     public class MainController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         // GET: Main
         public ActionResult Index()
         {
+            var session = db.NewSessions.Max(u => u.ID);
+            ViewBag.sessionid = session.ToString();
+            var num = db.NewSessions.SingleOrDefault(m => m.ID == session);
+            var report = db.SessionReports.SingleOrDefault(m => m.ID == session);
+            var schadule = db.SessionSchedules.SingleOrDefault(m => m.ID == session);
+
+            ViewBag.sessionnum = num.Session_Num;
+            ViewBag.sessiondate = num.Session_Date;
+
+
+            if (report.SessionFile!=null)
+                ViewBag.rep = report.SessionFile;
+            else
+                ViewBag.rep = "";
+
+            //if (schadule.ScheduleFile != null)
+            //    ViewBag.sch = schadule.ScheduleFile;
+            //else
+            //    ViewBag.sch = "";
+
+
             return View();
         }
 

@@ -11,9 +11,9 @@
         <img class="img-fluid" src="~/img/logo.png" alt="fayoum-logo" title="fayoum-logo" style="width: 109px;height:91px" />
     </div>
     <div class="col-xl-8 col-lg-8 col-md-8 col-xs-8 col-8">
-        <h2 class="section-title">جدول أعمال الاجتماع رقم </h2>
+        <h2 class="section-title">جدول أعمال الاجتماع رقم @ViewBag.sessionnum </h2>
         <h4 class="section-title">لمجلس إدارة شركة مياه الشرب والصرف الصحى بالفيوم</h4>
-        <h4 class="section-title">المنعقد يوم <span></span>    الموافق:<span></span></h4>
+        <h4 class="section-title">المنعقد يوم <span></span>    الموافق: @ViewBag.sessiondate<span></span></h4>
     </div>
     <div class="logo col-xl-2 col-lg-2 col-md-2 col-xs-2 col-2  ">
 
@@ -39,10 +39,10 @@
             <!--main text-->
             <figure>
                 <h4>التصديق على محضر مجلس الادارة</h4>
-                <figcaption>اجتماع رقم 242</figcaption>
+                <figcaption>اجتماع رقم @ViewBag.sessionnum</figcaption>
             </figure>
             <!--anchor-->
-            <a href="#">Anchor link</a>
+            <a href="~/FileUpload/@ViewBag.rep">Anchor link</a>
         </li>
 
         <!-- === stretcher item === -->
