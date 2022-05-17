@@ -13,10 +13,11 @@ namespace WebApp.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Memo
-        public ActionResult Index(int id)
+        public ActionResult Index(int id,string sessionNum)
         {
             var list = db.MemoTypes.ToList();
             ViewBag.Result = id.ToString();
+            ViewBag.sessionNum = sessionNum.ToString();
 
             return View(list);
         }

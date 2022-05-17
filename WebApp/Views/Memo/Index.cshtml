@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
+    <h4>مذكرات الجلسة رقم @ViewBag.sessionNum</h4>
 @foreach (var item in Model)
 {
-    <div class="panel panel-warning">
+    <div class="panel panel-warning" >
         <div class="panel-heading"><h3>@Html.DisplayFor(modelItem => item.Name)</h3></div>
 
-        <div class="row panel-warning">
+        <div class="row panel-warning" style="padding-top:5px;padding-right:5px;">
             @*<h5>@Html.DisplayFor(modelItem => item.CategoryDescription)</h5>*@
 
             @foreach (var subItem in item.sub)
@@ -22,7 +22,7 @@
                     <img src="~/img/@item.Img" />
 
                     <div class="row">
-                        <div class="col-md-7" style="text-align:center">
+                        <div class="col-md-8" style="text-align:center">
                             <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.LabelFor(modelItem => subItem.Sub_ID).ToString()))</h5>
                         </div>
                         <div class="col-md-3" style="text-align:center">
