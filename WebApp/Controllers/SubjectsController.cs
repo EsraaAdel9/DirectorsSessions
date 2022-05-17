@@ -28,7 +28,7 @@ namespace WebApp.Controllers
         public ActionResult Index(int? id, string sessionNum)
         {
             var sessionSubjects = db.SessionSubjects.Include(s => s.NewSession);
-            ViewBag.sessionNum = sessionNum.ToString();
+            //ViewBag.sessionNum = sessionNum.ToString();
 
             if (id != null)
             {

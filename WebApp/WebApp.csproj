@@ -141,6 +141,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bundle.min.css" />
+    <Content Include="Content\css.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\font.css" />
@@ -153,8 +155,30 @@
     <Content Include="Content\style.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\22.jpg" />
+    <Content Include="img\222.jpg" />
+    <Content Include="img\22222.jpg" />
+    <Content Include="img\istockphoto-1160396923-612x612.jpg" />
+    <Content Include="img\istockphoto-1205249754-612x612.jpg" />
+    <Content Include="img\istockphoto-1241235622-612x612.jpg" />
+    <Content Include="img\istockphoto-1290904409-612x612.jpg" />
+    <Content Include="img\istockphoto-1301409268-612x612.jpg" />
+    <Content Include="img\istockphoto-1304677649-612x612.jpg" />
+    <Content Include="img\istockphoto-1328745372-612x612.jpg" />
+    <Content Include="img\istockphoto-1350239094-612x612.jpg" />
+    <Content Include="img\istockphoto-1353142542-612x612.jpg" />
+    <Content Include="img\istockphoto-814593928-612x612.jpg" />
+    <Content Include="img\istockphoto-915451122-612x612.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\ratification.jpg" />
+    <Content Include="img\services-1.jpg" />
+    <Content Include="img\services-2.jpg" />
+    <Content Include="img\services-22.jpg" />
+    <Content Include="img\services-3.jpg" />
+    <Content Include="img\services-4.jpg" />
     <Content Include="img\wizard-city.jpg" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bundle.min.js" />
     <Content Include="Scripts\jquery.bootstrap.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\material-bootstrap-wizard.js" />
@@ -278,6 +302,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="img\photo-1612367980327-7454a7276aa7.avif" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_MainLayout.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
