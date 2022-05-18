@@ -387,6 +387,7 @@
     <Content Include="Views\SessionInstructions\Edit.cshtml" />
     <Content Include="Views\SessionInstructions\Index.cshtml" />
     <Content Include="Views\Memo\ViewSub.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,24 +5,24 @@
 }
 
 
-@*<p>@ViewBag.sessionid</p>
-    <p>@ViewBag.rep</p>*@
-@*<div class="container-fluid" style="display: flex">
-    <div class="logo col-xl-2 col-lg-2 col-md-2 col-xs-2 col-2  ">
-        <img class="img-fluid" src="~/img/logo.png" alt="fayoum-logo" title="fayoum-logo" style="width: 109px;height:91px" />
-    </div>
-    <div class="col-xl-8 col-lg-8 col-md-8 col-xs-8 col-8">
-        <h2 class="section-title">جدول أعمال الاجتماع رقم @ViewBag.sessionnum </h2>
-        <h4 class="section-title">لمجلس إدارة شركة مياه الشرب والصرف الصحى بالفيوم</h4>
-        <h4 class="section-title">المنعقد يوم <span></span>    الموافق: @ViewBag.sessiondate<span></span></h4>
-    </div>
-    <div class="logo col-xl-2 col-lg-2 col-md-2 col-xs-2 col-2  ">
+@*<p>@ViewBag.sessionid</p>*@
+    @*<p>@ViewBag.rep</p>*@
+<div class="container-fluid" style="display: flex">
+        <div class="logo col-xl-2 col-lg-2 col-md-2 col-xs-2 col-2  ">
+            <img class="img-fluid" src="~/img/logo.png" alt="fayoum-logo" title="fayoum-logo" style="width: 109px;height:91px" />
+        </div>
+        <div class="col-xl-8 col-lg-8 col-md-8 col-xs-8 col-8">
+            <h2 class="section-title">جدول أعمال الاجتماع رقم @ViewBag.currentsessionnum </h2>
+            <h4 class="section-title">لمجلس إدارة شركة مياه الشرب والصرف الصحى بالفيوم</h4>
+            <h4 class="section-title">المنعقد يوم <span></span>    الموافق: @ViewBag.sessiondate<span></span></h4>
+        </div>
+        <div class="logo col-xl-2 col-lg-2 col-md-2 col-xs-2 col-2  ">
+
+        </div>
 
     </div>
 
-</div>*@
-
-@*<section class="stretcher-wrapper" style="padding-top:0;">
+<section class="stretcher-wrapper" style="padding-top:0;">
 
         <!--   === stretcher === -->
 
@@ -40,7 +40,7 @@
                 <!--main text-->
                 <figure>
                     <h4>التصديق على محضر مجلس الادارة</h4>
-                    <figcaption>اجتماع رقم @ViewBag.sessionnum</figcaption>
+                    <figcaption>اجتماع رقم @ViewBag.prevsessionnum</figcaption>
                 </figure>
                 <!--anchor-->
                 @if (@ViewBag.rep != "")
@@ -65,7 +65,7 @@
                 <!--main text-->
                 <figure>
                     <h4>جدول متابعة قرارات مجلس الادارة</h4>
-                    <figcaption>اجتماع رقم @ViewBag.sessionnum</figcaption>
+                    <figcaption>اجتماع رقم @ViewBag.prevsessionnum</figcaption>
                 </figure>
                 <!--anchor-->
                 @if (@ViewBag.ScheduleFile != "")
@@ -87,7 +87,7 @@
                 </div>
                 <figure>
                     <h4>الاوامر الادارية لجلسة مجلس الادارة</h4>
-                    <figcaption>اجتماع رقم @ViewBag.sessionnum</figcaption>
+                    <figcaption>اجتماع رقم @ViewBag.prevsessionnum</figcaption>
                 </figure>
                 <!--anchor-->
                 @if (@ViewBag.instract != "")
@@ -112,15 +112,15 @@
                 <!--main text-->
                 <figure>
                     <h4>مذكرات الجلسة </h4>
-                    <figcaption>اجتماع رقم @ViewBag.sessionnum</figcaption>
+                    <figcaption>اجتماع رقم @ViewBag.currentsessionnum</figcaption>
                 </figure>
                 <!--anchor-->
-                <a href="#">Anchor link</a>
+                <a href="@Url.Action("ViewSub","Memo", new { id = @ViewBag.sessionid, sessionNum =@ViewBag.currentsessionnum})">Anchor link</a>
             </li>
 
 
         </ul>
-    </section>*@
+    </section>
 
 <section class="rooms rooms-widget">
 
@@ -248,7 +248,9 @@
     </div> <!--/container-->
 
 
-
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
 
 </section>
 

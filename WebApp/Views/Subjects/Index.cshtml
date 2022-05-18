@@ -26,10 +26,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Sub_Name)
         </th>
-        <th>
+        <th style="max-width:150px">
             @Html.DisplayNameFor(model => model.Sub_File)
         </th>
-        <th></th>
+        <th style="min-width:200px;text-align:center">Action</th>
     </tr>
 
     @foreach (var item in Model)
@@ -41,16 +41,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.MemoTypes.Name)
             </td>
-            <td>
+            <td style="text-align:center">
                 @Html.DisplayFor(modelItem => item.Sub_ID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Sub_Name)
             </td>
-            <td>
+            <td style="max-width:150px">
                 @Html.DisplayFor(modelItem => item.Sub_File)
             </td>
-            <td>
+            <td style="min-width:200px">
                 <a href="@Url.Action("Details", new { id = item.ID })" class="btn btn-default">
                     <i class="icofont-ui-edit"></i>
                     عرض

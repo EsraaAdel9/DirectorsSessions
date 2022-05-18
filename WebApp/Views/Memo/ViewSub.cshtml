@@ -2,9 +2,9 @@
 
 @{
     ViewBag.Title = "ViewSub";
-    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
 }
-<h4>مذكرات الجلسة رقم @ViewBag.sessionNum</h4>
+<h4 style="text-align:center">مذكرات الجلسة رقم @ViewBag.sessionNum</h4>
 @foreach (var item in Model)
 {
     <div class="panel panel-warning">

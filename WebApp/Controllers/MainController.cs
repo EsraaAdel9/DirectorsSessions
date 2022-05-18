@@ -14,33 +14,40 @@ namespace WebApp.Controllers
         // GET: Main
         public ActionResult Index()
         {
-            var session = db.NewSessions.Max(u => u.ID-1);
-            ViewBag.sessionid = session.ToString();
-            var num = db.NewSessions.SingleOrDefault(m => m.ID == session);
-            var report = db.SessionReports.SingleOrDefault(m => m.NewSessionID == session);
-            var schadule = db.SessionSchedules.SingleOrDefault(m => m.NewSessionID == session);
-            var instraction = db.SessionInstructions.SingleOrDefault(m => m.NewSessionID == session);
+            var prevsession = db.NewSessions.Max(u => u.ID-1);
+            if (prevsession!=0)
+            {
+                var currentsessionnum = db.NewSessions.Max(u => u.ID);
 
-            ViewBag.sessionnum = num.Session_Num;
-            ViewBag.sessiondate = num.Session_Date;
+                ViewBag.sessionid = currentsessionnum.ToString();
+                var currentnum = db.NewSessions.SingleOrDefault(m => m.ID == currentsessionnum);
+                var num = db.NewSessions.SingleOrDefault(m => m.ID == prevsession);
+                var report = db.SessionReports.SingleOrDefault(m => m.NewSessionID == prevsession);
+                var schadule = db.SessionSchedules.SingleOrDefault(m => m.NewSessionID == prevsession);
+                var instraction = db.SessionInstructions.SingleOrDefault(m => m.NewSessionID == prevsession);
+
+                ViewBag.prevsessionnum = num.Session_Num;
+                ViewBag.currentsessionnum = currentnum.Session_Num;
+
+                ViewBag.sessiondate = num.Session_Date;
 
 
-            if (report!=null)
-              ViewBag.rep = report.SessionFile;
-            else
-                ViewBag.rep = "";
+                if (report != null)
+                    ViewBag.rep = report.SessionFile;
+                else
+                    ViewBag.rep = "";
 
 
-            if (schadule != null)
-                ViewBag.sch = schadule.ScheduleFile;
-            else
-                ViewBag.sch = "";
+                if (schadule != null)
+                    ViewBag.sch = schadule.ScheduleFile;
+                else
+                    ViewBag.sch = "";
 
-            if (instraction != null)
-                ViewBag.instract = instraction.Sessionnstructions;
-            else
-                ViewBag.instract = "";
-
+                if (instraction != null)
+                    ViewBag.instract = instraction.Sessionnstructions;
+                else
+                    ViewBag.instract = "";
+            }
             return View();
         }
 
