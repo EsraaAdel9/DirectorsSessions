@@ -41,7 +41,7 @@
                 <a href="@Url.Action("Index","Subjects", new { id = item.ID , sessionNum = item.Session_Num})" class="btn btn-success">
                     ادخال مذكرات الجلسة
                 </a>
-                <a href="@Url.Action("Index","Memo", new { id = item.ID , sessionNum = item.Session_Num})" class="btn btn-default">
+                <a href="@Url.Action("ViewSub","Memo", new { id = item.ID , sessionNum = item.Session_Num})" class="btn btn-default">
                     عرض مذكرات الجلسة
                 </a>
             </td>

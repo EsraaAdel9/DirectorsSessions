@@ -22,7 +22,14 @@ namespace WebApp.Controllers
             return View(list);
         }
 
+        public ActionResult ViewSub(int id, string sessionNum)
+        {
+            var list = db.MemoTypes.ToList();
+            ViewBag.Result = id.ToString();
+            ViewBag.sessionNum = sessionNum.ToString();
 
+            return View(list);
+        }
         // GET: Memo/Details/5
         public ActionResult Details(int id)
         {

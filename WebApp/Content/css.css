@@ -1,6 +1,5 @@
 body {
     background-color: white;
-    direction: rtl;
 }
 ul{
     background-color: #336e9c;
@@ -9,20 +8,28 @@ ul{
     text-align: center;
     margin: 0 !important;
     text-transform: uppercase;
-    font-family: 'Cairo', sans-serif;
+    /*font-family: 'Cairo', sans-serif;*/
     font-weight: 700;
     font-size: 26px;
     line-height: 35px;
 }
-@font-face {
-    font-family: 'Cairo';
-    src: url("../fonts/Cairo.eot"); /* IE9 Compat Modes */
-    src: url("../fonts/Cairo.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-      url("../fonts/Cairo.otf") format("opentype"), /* Open Type Font */
-      url("../fonts/Cairo.svg") format("svg"), /* Legacy iOS */
-      url("../fonts/Cairo.ttf") format("truetype"), /* Safari, Android, iOS */
-      url("../fonts/Cairo.woff") format("woff"), /* Modern Browsers */
-      url("../fonts/Cairo.woff2") format("woff2"); /* Modern Browsers */
-    font-weight: normal;
-    font-style: normal;
-  }
+.icon-chevron-right::before {
+    content: " ";
+}
+.icon-chevron-left:before {
+    content: " ";
+}
+
+
+section {
+    padding-top: 25px;
+ }
+
+.text{
+    direction: rtl;
+}
+
+.text span {
+    color: #b58e3e;
+    font-weight: 400;
+}

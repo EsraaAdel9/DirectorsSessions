@@ -41,5 +41,7 @@ namespace WebApplication1.Models
         public System.Data.Entity.DbSet<WebApp.Models.SessionReport> SessionReports { get; set; }
 
         public System.Data.Entity.DbSet<WebApp.Models.SessionSchedule> SessionSchedules { get; set; }
+
+        public System.Data.Entity.DbSet<WebApp.Models.SessionInstructions> SessionInstructions { get; set; }
     }
 }

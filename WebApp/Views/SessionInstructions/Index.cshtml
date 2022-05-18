@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApp.Models.SessionInstructions>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<a href="@Url.Action("Create")" class="btn btn-info "><i class="fa fa-plus" style="padding-top: 5px; padding-left: 5px;"></i>امر اداري جديد&nbsp;</a>
+<br />
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NewSession.Session_Num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sessionnstructions)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewSession.Session_Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sessionnstructions)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-info">
+                    تعديل
+                </a>
+                <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-danger">
+                    حذف
+                </a>
+                <a href="~/FileUpload/@item.Sessionnstructions" class="btn btn-default">
+                    عرض الامر الاداري
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

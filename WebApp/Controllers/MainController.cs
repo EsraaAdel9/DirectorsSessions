@@ -14,26 +14,32 @@ namespace WebApp.Controllers
         // GET: Main
         public ActionResult Index()
         {
-            var session = db.NewSessions.Max(u => u.ID);
+            var session = db.NewSessions.Max(u => u.ID-1);
             ViewBag.sessionid = session.ToString();
             var num = db.NewSessions.SingleOrDefault(m => m.ID == session);
-            var report = db.SessionReports.SingleOrDefault(m => m.ID == session);
-            var schadule = db.SessionSchedules.SingleOrDefault(m => m.ID == session);
+            var report = db.SessionReports.SingleOrDefault(m => m.NewSessionID == session);
+            var schadule = db.SessionSchedules.SingleOrDefault(m => m.NewSessionID == session);
+            var instraction = db.SessionInstructions.SingleOrDefault(m => m.NewSessionID == session);
 
             ViewBag.sessionnum = num.Session_Num;
             ViewBag.sessiondate = num.Session_Date;
 
 
-            if (report.SessionFile!=null)
-                ViewBag.rep = report.SessionFile;
+            if (report!=null)
+              ViewBag.rep = report.SessionFile;
             else
                 ViewBag.rep = "";
 
-            //if (schadule.ScheduleFile != null)
-            //    ViewBag.sch = schadule.ScheduleFile;
-            //else
-            //    ViewBag.sch = "";
 
+            if (schadule != null)
+                ViewBag.sch = schadule.ScheduleFile;
+            else
+                ViewBag.sch = "";
+
+            if (instraction != null)
+                ViewBag.instract = instraction.Sessionnstructions;
+            else
+                ViewBag.instract = "";
 
             return View();
         }

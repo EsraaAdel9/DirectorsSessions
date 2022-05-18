@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApp.Models.MemoTypes>
+
+@{
+    ViewBag.Title = "ViewSub";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<h4>مذكرات الجلسة رقم @ViewBag.sessionNum</h4>
+@foreach (var item in Model)
+{
+    <div class="panel panel-warning">
+        <div class="panel-heading"><h3>@Html.DisplayFor(modelItem => item.Name)</h3></div>
+
+        <div class="row panel-warning" style="padding-top:5px;padding-right:5px;">
+            @*<h5>@Html.DisplayFor(modelItem => item.CategoryDescription)</h5>*@
+
+            @foreach (var subItem in item.sub)
+            {
+                if (@subItem.NewSessionID.ToString() == @ViewBag.Result)
+                {
+                    <div class="col-md-3 thumbnail" style="margin-left:5px; margin-bottom:30px; min-height:100px; ">
+
+                        <img src="~/img/@item.Img" />
+
+                        <div class="row">
+                            <div class="col-md-8" style="text-align:center">
+                                <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.LabelFor(modelItem => subItem.Sub_ID).ToString()))</h5>
+                            </div>
+                            <div class="col-md-3" style="text-align:center">
+                                <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subItem.Sub_ID).ToString()))</h5>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align:center">
+                            <h5>@Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => subItem.Sub_Name).ToString()))</h5>
+                        </div>
+                        <div class="row" style="text-align:center; padding-bottom:5px">
+                            <a href="~/FileUpload/@Html.DisplayFor(model=>subItem.Sub_File)" class="btn btn-info"> <i class="fa fa-eye"></i> عرض</a>
+
+                            @*<a href="~/FileUpload/@Html.DisplayFor(model=>subItem.Sub_File)" class = "btn btn-primary"><i class="fa fa-eye"></i> @Html.DisplayFor(model => subItem.Sub_File) </a>*@
+
+                            @*@Html.ActionLink("عرض", "Details", new { JobId = subItem.NewSessionID }, new { @class = "btn btn-primary" })*@
+                        </div>
+
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}
+
+
