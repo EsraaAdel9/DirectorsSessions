@@ -1,21 +1,26 @@
 body {
     background-color: white;
+    font-family: myFont;
 }
-ul{
+
+ul {
     background-color: #336e9c;
 }
+
 .section-title {
     text-align: center;
     margin: 0 !important;
     text-transform: uppercase;
-    /*font-family: 'Cairo', sans-serif;*/
+    font-family: myFont;
     font-weight: 700;
     font-size: 26px;
     line-height: 35px;
 }
+
 .icon-chevron-right::before {
     content: " ";
 }
+
 .icon-chevron-left:before {
     content: " ";
 }
@@ -23,13 +28,18 @@ ul{
 
 section {
     padding-top: 25px;
- }
+}
 
-.text{
+.text {
     direction: rtl;
 }
 
-.text span {
-    color: #b58e3e;
-    font-weight: 400;
-}
+    .text span, .book a, .text a {
+        /*color: #b58e3e;*/
+        font-weight: bold;
+        font-family: myFont;
+    }
+
+    .text a {
+        font-size: 21px;
+    }

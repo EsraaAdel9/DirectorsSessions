@@ -18,6 +18,9 @@ namespace WebApp.Models
         [Display(Name = "رقم الجلسة")]
         public string Session_Num { get; set; }
 
+        [Display(Name = "يوم الجلسة")]
+        public string Session_Day { get; set; }
+
         [Display(Name = "تاريخ الجلسة")]
         public DateTime Session_Date { get; set; }
 

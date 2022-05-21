@@ -5,6 +5,8 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
+<h3 style="margin-top:0px">الجلسات</h3>
+<hr />
 <a href="@Url.Action("Create")" class="btn btn-info "><i class="fa fa-plus" style="padding-top: 5px; padding-left: 5px;"></i>انشاء جلسة جديدة&nbsp;</a>
 <br />
 <br />
@@ -15,7 +17,10 @@
         <th style="min-width: 90px; text-align: center;">
             @Html.DisplayNameFor(model => model.Session_Num)
         </th>
-        <th style="min-width: 220px; text-align: center;">
+        <th style="min-width: 90px; text-align: center;">
+            @Html.DisplayNameFor(model => model.Session_Day)
+        </th>
+        <th style="min-width: 120px; text-align: center;">
             @Html.DisplayNameFor(model => model.Session_Date)
         </th>
         <th style="text-align:center">Action</th>
@@ -23,29 +28,40 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td style="min-width: 90px; text-align: center;">
-                @Html.DisplayFor(modelItem => item.Session_Num)
-            </td>
-            <td style="min-width: 220px; text-align: center;">
-                @Html.DisplayFor(modelItem => item.Session_Date)
-            </td>
-            <td style="text-align:center">
-                <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-info">
-                    تعديل
-                </a>
-                <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-danger">
-                    حذف
-                </a>
-
-                <a href="@Url.Action("Index","Subjects", new { id = item.ID , sessionNum = item.Session_Num})" class="btn btn-success">
-                    ادخال مذكرات الجلسة
-                </a>
-                <a href="@Url.Action("ViewSub","Memo", new { id = item.ID , sessionNum = item.Session_Num})" class="btn btn-default">
-                    عرض مذكرات الجلسة
-                </a>
-            </td>
-        </tr>
+<tr>
+    <td style="min-width: 90px; text-align: center;">
+        @Html.DisplayFor(modelItem => item.Session_Num)
+    </td>
+    <td style="min-width: 90px; text-align: center;">
+        @Html.DisplayFor(modelItem => item.Session_Day)
+    </td>
+    <td style="min-width: 120px; text-align: center;">
+        @Html.DisplayFor(modelItem => item.Session_Date)
+    </td>
+    <td style="text-align:center">
+        <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-info">
+            تعديل
+        </a>
+        @if (@item.ID == @Model.Max(u => u.ID))
+        {
+            <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-danger">
+                حذف
+            </a>
+        }
+        else
+        {
+            <a href="#" class="btn btn-danger" disabled>
+                حذف
+            </a>
+        }
+        <a href="@Url.Action("Index","Subjects", new { id = item.ID , sessionNum = item.Session_Num})" class="btn btn-success">
+            ادخال مذكرات الجلسة
+        </a>
+        <a href="@Url.Action("ViewSub","Memo", new { id = item.ID , sessionNum = item.Session_Num})" class="btn btn-default">
+            عرض مذكرات الجلسة
+        </a>
+    </td>
+</tr>
     }
 
 </table>

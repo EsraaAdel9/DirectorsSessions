@@ -179,6 +179,7 @@
     <Content Include="img\wizard-city.jpg" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bundle.min.js" />
+    <Content Include="Scripts\JavaScript.js" />
     <Content Include="Scripts\jquery.bootstrap.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\material-bootstrap-wizard.js" />
@@ -279,6 +280,10 @@
     <Compile Include="Migrations\202205181002327_instract2.cs" />
     <Compile Include="Migrations\202205181002327_instract2.Designer.cs">
       <DependentUpon>202205181002327_instract2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205190733057_sessionday.cs" />
+    <Compile Include="Migrations\202205190733057_sessionday.Designer.cs">
+      <DependentUpon>202205190733057_sessionday.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -388,6 +393,7 @@
     <Content Include="Views\SessionInstructions\Index.cshtml" />
     <Content Include="Views\Memo\ViewSub.cshtml" />
     <Content Include="Views\Shared\_LayoutPage2.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -456,6 +462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205181002327_instract2.resx">
       <DependentUpon>202205181002327_instract2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205190733057_sessionday.resx">
+      <DependentUpon>202205190733057_sessionday.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -5,8 +5,7 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-@*<h4>مواضيع الجلسة </h4>*@
-@*<h4>مذكرات الجلسة رقم @ViewBag.sessionNum</h4>*@
+<h3 style="margin-top:0px">مذكرات الجلسات</h3>
 
 <a href="@Url.Action("Create")" class="btn btn-primary "><i class="fa fa-plus" style="padding-top: 5px; padding-left: 5px;"></i>انشاء موضوع جديد&nbsp;</a>
 <br />
@@ -15,8 +14,8 @@
 <table class="table">
     <tr>
         @*<th>
-            @Html.DisplayNameFor(model => model.NewSession.Session_Num)
-        </th>*@
+                @Html.DisplayNameFor(model => model.NewSession.Session_Num)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.MemoTypes.Name)
         </th>
@@ -36,8 +35,8 @@
     {
         <tr>
             @*<td>
-                @Html.DisplayFor(modelItem => item.NewSession.Session_Num)
-            </td>*@
+                    @Html.DisplayFor(modelItem => item.NewSession.Session_Num)
+                </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.MemoTypes.Name)
             </td>
@@ -50,7 +49,7 @@
             <td style="max-width:150px">
                 @Html.DisplayFor(modelItem => item.Sub_File)
             </td>
-            <td style="min-width:200px">
+            <td style="min-width:200px; text-align:center">
                 <a href="@Url.Action("Details", new { id = item.ID })" class="btn btn-default">
                     <i class="icofont-ui-edit"></i>
                     عرض
@@ -59,10 +58,20 @@
                     <i class="icofont-ui-edit"></i>
                     تعديل
                 </a>
-                <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-danger">
-                    <i class="icofont-ui-delete"></i>
-                    حذف
-                </a>
+                @if (@item.NewSessionID == @Model.Max(u => u.NewSessionID))
+                {
+                    <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-danger">
+                        <i class="icofont-ui-delete"></i>
+                        حذف
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-danger" disabled>
+                        <i class="icofont-ui-delete"></i>
+                        حذف
+                    </a>
+                }
             </td>
         </tr>
     }

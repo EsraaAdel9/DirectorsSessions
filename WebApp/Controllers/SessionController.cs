@@ -36,10 +36,11 @@ namespace WebApp.Controllers
             }
             return View(newSession);
         }
-
+        
         // GET: Session/Create
         public ActionResult Create()
         {
+
             return View();
         }
 
@@ -48,7 +49,7 @@ namespace WebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Session_Num,Session_Date")] NewSession newSession)
+        public ActionResult Create(NewSession newSession)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +81,7 @@ namespace WebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Session_Num,Session_Date")] NewSession newSession)
+        public ActionResult Edit(NewSession newSession)
         {
             if (ModelState.IsValid)
             {
@@ -116,17 +117,7 @@ namespace WebApp.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult View1(int? id)
-        {
-            var sessionSubjects = db.SessionSubjects.Include(s => s.NewSession).Where(m => m.NewSessionID == 2).ToList();
-            if (sessionSubjects.Count <1)
-            {
-                return HttpNotFound();
-            }
-            else
-                return View(sessionSubjects);
-        }
-
+       
         protected override void Dispose(bool disposing)
         {
             if (disposing)
