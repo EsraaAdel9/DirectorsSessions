@@ -4,131 +4,14 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-
-@*<p>@ViewBag.sessionid</p>*@
-@*<p>@ViewBag.rep</p>*@
-@*<div class="container-fluid" style="display: flex">
-    <div class="logo col-xl-2 col-lg-2 col-md-2 col-xs-2 col-2  ">
-        <img class="img-fluid" src="~/img/logo.png" alt="fayoum-logo" title="fayoum-logo" style="width: 109px;height:91px" />
-    </div>
-    <div class="col-xl-8 col-lg-8 col-md-8 col-xs-8 col-8">
-        <h2 class="section-title">جدول أعمال الاجتماع رقم @ViewBag.currentsessionnum </h2>
-        <h4 class="section-title">لمجلس إدارة شركة مياه الشرب والصرف الصحى بالفيوم</h4>
-        <h4 class="section-title">المنعقد يوم <span></span>    الموافق: @ViewBag.sessiondate<span></span></h4>
-    </div>
-    <div class="logo col-xl-2 col-lg-2 col-md-2 col-xs-2 col-2  ">
-
-    </div>
-
-</div>*@
-
-@*<section class="stretcher-wrapper" style="padding-top:0;">
-
-    <!--   === stretcher === -->
-
-    <ul class="stretcher">
-
-        <!-- === stretcher item === -->
-
-        <li class="stretcher-item" style="background-image:url(../img/services-1.jpg);">
-            <!--logo-item-->
-            <div class="stretcher-logo">
-                <div class="text">
-                    <span class="text-intro h4">التصديق على محضر مجلس الادارة</span>
-                </div>
-            </div>
-            <!--main text-->
-            <figure>
-                <h4>التصديق على محضر مجلس الادارة</h4>
-                <figcaption>اجتماع رقم @ViewBag.prevsessionnum</figcaption>
-            </figure>
-            <!--anchor-->
-            @if (@ViewBag.rep != "")
-            {
-                <a href="~/FileUpload/@ViewBag.rep">Anchor link</a>
-            }
-            else
-            {<a href="#">Anchor link</a>}
-
-
-        </li>
-
-        <!-- === stretcher item === -->
-
-        <li class="stretcher-item" style="background-image:url(../img/services-2.jpg);">
-            <!--logo-item-->
-            <div class="stretcher-logo">
-                <div class="text">
-                    <span class="text-intro h4">جدول متابعة قرارات مجلس الادارة</span>
-                </div>
-            </div>
-            <!--main text-->
-            <figure>
-                <h4>جدول متابعة قرارات مجلس الادارة</h4>
-                <figcaption>اجتماع رقم @ViewBag.prevsessionnum</figcaption>
-            </figure>
-            <!--anchor-->
-            @if (@ViewBag.ScheduleFile != "")
-            {
-                <a href="~/FileUpload/@ViewBag.sch">Anchor link</a>
-            }
-            else
-            {<a href="#">Anchor link</a>}
-        </li>
-
-        <!-- === stretcher item === -->
-
-        <li class="stretcher-item" style="background-image:url(../img/services-3.jpg);">
-            <!--logo-item-->
-            <div class="stretcher-logo">
-                <div class="text">
-                    <span class="text-intro h4">الاوامر الادارية لجلسة مجلس الادارة</span>
-                </div>
-            </div>
-            <figure>
-                <h4>الاوامر الادارية لجلسة مجلس الادارة</h4>
-                <figcaption>اجتماع رقم @ViewBag.prevsessionnum</figcaption>
-            </figure>
-            <!--anchor-->
-            @if (@ViewBag.instract != "")
-            {
-                <a href="~/FileUpload/@ViewBag.instract">Anchor link</a>
-            }
-            else
-            {<a href="#">Anchor link</a>}
-        </li>
-
-        <!-- === stretcher item === -->
-
-        <li class="stretcher-item" style="background-image:url(../img/services-4.jpg);">
-
-
-            <!--logo-item-->
-            <div class="stretcher-logo">
-                <div class="text">
-                    <span class="text-intro h4">مذكرات الجلسة</span>
-                </div>
-            </div>
-            <!--main text-->
-            <figure>
-                <h4>مذكرات الجلسة </h4>
-                <figcaption>اجتماع رقم @ViewBag.currentsessionnum</figcaption>
-            </figure>
-            <!--anchor-->
-            <a href="@Url.Action("ViewSub","Memo", new { id = @ViewBag.sessionid, sessionNum =@ViewBag.currentsessionnum})">Anchor link</a>
-        </li>
-
-
-    </ul>
-</section>*@
 <section class="rooms rooms-widget">
 
     <!-- === rooms header === -->
 
-    <div class="section-header" style="direction: rtl;">
+    <div class="section-header" style="direction: rtl;padding-bottom:141px">
         <div class="container-fluid" style="display: flex">
             <div class="logo col-xl-2 col-lg-2 col-md-2 col-xs-2 col-2  ">
-                <img class="img-fluid" src="~/img/logo.png" alt="fayoum-logo" title="fayoum-logo" style="width: 129px;height:101px" />
+                    <img class="img-fluid" src="~/img/logo.png" alt="fayoum-logo" title="fayoum-logo" style="width: 129px;height:101px" />    
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8 col-xs-8 col-8">
                 <h2 class="section-title">جدول أعمال الاجتماع رقم @ViewBag.currentsessionnum </h2>
