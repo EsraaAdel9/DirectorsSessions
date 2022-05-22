@@ -285,6 +285,10 @@
     <Compile Include="Migrations\202205190733057_sessionday.Designer.cs">
       <DependentUpon>202205190733057_sessionday.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205222213437_dt.cs" />
+    <Compile Include="Migrations\202205222213437_dt.Designer.cs">
+      <DependentUpon>202205222213437_dt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -466,6 +470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205190733057_sessionday.resx">
       <DependentUpon>202205190733057_sessionday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205222213437_dt.resx">
+      <DependentUpon>202205222213437_dt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

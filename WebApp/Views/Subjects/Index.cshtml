@@ -13,43 +13,43 @@
 
 <table class="table">
     <tr>
-        <th>
+        <th style="max-width: 70px; text-align: center">
                 @Html.DisplayNameFor(model => model.NewSession.Session_Num)
         </th>
-        <th style="max-width:150px">
+        <th style="max-width:100px; text-align:center">
             @Html.DisplayNameFor(model => model.MemoTypes.Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Sub_ID)
         </th>
-        <th>
+        <th style="max-width:100px">
             @Html.DisplayNameFor(model => model.Sub_Name)
         </th>
-        <th style="max-width:100px">
+        <th style="max-width:80px">
             @Html.DisplayNameFor(model => model.Sub_File)
         </th>
-        <th style="min-width:200px;text-align:center">Action</th>
+        <th style="padding-left:0px; text-align:center">Action</th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td style="max-width: 70px; text-align: center">
                     @Html.DisplayFor(modelItem => item.NewSession.Session_Num)
             </td>
-            <td style="max-width:150px">
+            <td style="max-width: 100px; text-align: center">
                 @Html.DisplayFor(modelItem => item.MemoTypes.Name)
             </td>
             <td style="text-align:center">
                 @Html.DisplayFor(modelItem => item.Sub_ID)
             </td>
-            <td >
+            <td style="max-width:100px">
                 @Html.DisplayFor(modelItem => item.Sub_Name)
             </td>
-            <td style="max-width:100px">
+            <td style="max-width:80px">
                 @Html.DisplayFor(modelItem => item.Sub_File)
             </td>
-            <td style="min-width:200px; text-align:center">
+            <td style="padding-left: 0px; text-align: center">
                 <a href="@Url.Action("Details", new { id = item.ID })" class="btn btn-default">
                     <i class="icofont-ui-edit"></i>
                     عرض

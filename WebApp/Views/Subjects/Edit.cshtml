@@ -52,6 +52,7 @@
             @Html.LabelFor(model => model.Sub_File, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-6" style="padding-top:15px">
                 <input type="file" name="upload" />
+                <a href="~/FileUpload/@Html.DisplayFor(model=>model.Sub_File)"> @Html.DisplayFor(model => model.Sub_File) </a>
                 @Html.ValidationMessageFor(model => model.Sub_File, "", new { @class = "text-danger" })
             </div>
         </div>

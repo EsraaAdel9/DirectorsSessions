@@ -30,7 +30,7 @@ namespace WebApp.Controllers
                 ViewBag.currentsessionnum = currentnum.Session_Num;
                 ViewBag.currentsessionday = currentnum.Session_Day;
 
-                ViewBag.sessiondate = num.Session_Date.ToString("dd-MM-yyyy");
+                ViewBag.sessiondate = currentnum.Session_Date.ToString("dd-MM-yyyy");
 
 
                 if (report != null)

@@ -71,6 +71,7 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(SubjectViewMode model, HttpPostedFileBase upload)
         {
+           
             if (ModelState.IsValid)
             {
                 string path = Path.Combine(Server.MapPath("~/FileUpload"), upload.FileName);
