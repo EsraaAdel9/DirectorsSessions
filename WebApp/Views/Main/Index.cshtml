@@ -42,7 +42,7 @@
                     </div>
                     <div class="details">
                         <div class="text">
-                            <h3 class="title"><a href="room-overview.html">مذكرات الجلسة</a></h3>
+                            <h3 class="title"><a href="@Url.Action("ViewSub","Memo", new { id = @ViewBag.sessionid, sessionNum =@ViewBag.currentsessionnum})">مذكرات الجلسة</a></h3>
                             <p>اجتماع رقم <span>"@ViewBag.currentsessionnum"</span></p>
                         </div>
                         <div class="book">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="details">
                         <div class="text">
-                            <h3 class="title"><a href="">الاوامر الادارية لجلسة مجلس الادارة</a></h3>
+                            <h3 class="title"><a href="~/FileUpload/@ViewBag.instract" >الاوامر الادارية لجلسة مجلس الادارة</a></h3>
                             <p>اجتماع رقم <span>"@ViewBag.prevsessionnum"</span></p>
                         </div>
                         <div class="book">
@@ -83,7 +83,7 @@
                     </div>
                     <div class="details">
                         <div class="text">
-                            <h3 class="title"><a href="room-overview.html">جدول متابعة قرارات مجلس الادارة</a></h3>
+                            <h3 class="title"><a  href="~/FileUpload/@ViewBag.sch">جدول متابعة قرارات مجلس الادارة</a></h3>
                             <p>اجتماع رقم  <span>"@ViewBag.prevsessionnum"</span></p>
                         </div>
                         <div class="book">
@@ -103,7 +103,7 @@
                     </div>
                     <div class="details">
                         <div class="text">
-                            <h4 class="title"><a href="room-overview.html">التصديق على محضر مجلس الادارة</a></h4>
+                            <h4 class="title"><a href="~/FileUpload/@ViewBag.rep">التصديق على محضر مجلس الادارة</a></h4>
                             <p>اجتماع رقم  <span>"@ViewBag.prevsessionnum"</span></p>
                         </div>
                         <div class="book">
